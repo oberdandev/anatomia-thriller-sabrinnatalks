@@ -204,7 +204,7 @@ export default function Home() {
 
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-gray-950/50 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 group">
-                  <div className="relative h-64 overflow-hidden bg-black flex items-center justify-center">
+                  <div className="relative h-112 overflow-hidden bg-black flex items-center justify-center">
                     <img src="/morte_nilo.jpg" alt="Morte no Nilo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </div>
                   <div className="p-6">
@@ -217,7 +217,7 @@ export default function Home() {
                 </div>
 
                 <div className="bg-gray-950/50 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 group">
-                  <div className="relative h-64 overflow-hidden bg-black flex items-center justify-center">
+                  <div className="relative h-112 overflow-hidden bg-black flex items-center justify-center">
                     <img src="/o_nome_da_rosa.jpg" alt="O Nome da Rosa" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </div>
                   <div className="p-6">
@@ -230,7 +230,7 @@ export default function Home() {
                 </div>
 
                 <div className="bg-gray-950/50 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 group">
-                  <div className="relative h-64 overflow-hidden bg-black flex items-center justify-center">
+                  <div className="relative h-112 overflow-hidden bg-black flex items-center justify-center">
                     <img src="/dragao_vermelho.jpg" alt="Dragão Vermelho" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </div>
                   <div className="p-6">
@@ -273,7 +273,7 @@ export default function Home() {
 
                     <div>
                       <p className="text-lg text-gray-200 mb-2">
-                        <span className="text-red-500 font-semibold">Formada em Letras - Língua e Literatura Inglesa</span>
+                        <span className="text-red-500 font-semibold">Licenciada em Letras - Língua e Literatura Inglesa</span>
                       </p>
                       <p>pela Universidade Federal do Amazonas (UFAM)</p>
                     </div>
