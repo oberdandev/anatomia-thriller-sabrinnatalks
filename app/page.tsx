@@ -47,14 +47,14 @@ export default function Home() {
 
             <div className="mb-8">
               <div className="inline-block relative">
-                <div className="text-gray-500 line-through text-2xl mb-2">R$ 150,00</div>
-                <div className="text-5xl font-bold text-red-500 mb-2">R$ 99,99</div>
-                <div className="absolute -top-2 -right-16 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold rotate-12">
+       {/*          <div className="text-gray-500 line-through text-2xl mb-2">R$ 150,00</div> */}
+                <div className="text-5xl font-bold text-red-500 mb-2">R$ 149,90</div>
+            {/*     <div className="absolute -top-2 -right-16 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold rotate-12">
                   -33%
                 </div>
                  <div className="absolute top-8 -right-40 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-bold rotate-12">
                   por tempo limitado!
-                </div>
+                </div> */}
               </div>
             </div>
 
