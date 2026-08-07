@@ -1,26 +1,147 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0a08;
+  --foreground: #e6d9b8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-cormorant);
+  --font-display: var(--font-playfair);
+  --font-fell: var(--font-fell);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-ink: #0b0a08;
+  --color-coal: #14110d;
+  --color-soot: #1c1813;
+  --color-parchment: #e6d9b8;
+  --color-parchment-dim: #b8a982;
+  --color-gaslight: #d9a441;
+  --color-gaslight-bright: #f0b429;
+  --color-brass: #a87f2d;
+  --color-blood: #8f1d22;
+  --color-highlight: #f0e12b;
+  --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-fell: "IM Fell English", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+::selection {
+  background: #d9a441;
+  color: #0b0a08;
+}
+
+/* Textura de grão de papel envelhecido */
+.texture-grain {
+  position: relative;
+}
+.texture-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Vinheta escura nas bordas */
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(11, 10, 8, 0.85) 100%);
+}
+
+/* Brilho de lampião a gás */
+.gaslight-glow {
+  box-shadow:
+    0 0 20px rgba(217, 164, 65, 0.35),
+    0 0 60px rgba(217, 164, 65, 0.15);
+}
+
+/* Carimbo "confidencial" estilo dossier */
+.stamp {
+  font-family: var(--font-fell), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border: 3px double currentColor;
+  padding: 0.35rem 1rem;
+  transform: rotate(-4deg);
+  display: inline-block;
+}
+
+/* Marcador amarelo estilo marca-texto */
+.highlight-marker {
+  background: #f0e12b;
+  color: #0b0a08;
+  padding: 0.1em 0.45em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Moldura de gravura antiga */
+.engraving-frame {
+  border: 1px solid rgba(168, 127, 45, 0.4);
+  outline: 1px solid rgba(168, 127, 45, 0.2);
+  outline-offset: 6px;
+}
+
+/* Animação de névoa flutuante */
+@keyframes fog-drift {
+  0% {
+    transform: translateX(-5%) translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(5%) translateY(-2%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-5%) translateY(0);
+    opacity: 0.4;
+  }
+}
+
+.fog-layer {
+  animation: fog-drift 14s ease-in-out infinite;
+}
+
+/* Chama de lampião tremulando */
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  41% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.9;
+  }
+  46% {
+    opacity: 1;
+  }
+}
+
+.flicker {
+  animation: flicker 4s linear infinite;
 }
