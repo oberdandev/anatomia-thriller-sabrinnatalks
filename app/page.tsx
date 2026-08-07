@@ -8,82 +8,111 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
+import HeroBackground from "@/components/HeroBackground";
+import ParallaxBg from "@/components/ParallaxBg";
+import Reveal from "@/components/Reveal";
+import ScrollProgress from "@/components/ScrollProgress";
+import SplitText from "@/components/SplitText";
 
 const CHECKOUT_URL = "https://chk.eduzz.com/VWGZ2PZ407";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-ink text-parchment font-sans texture-grain">
+      <ScrollProgress />
+
       {/* ============ HERO ============ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/hero-detective.png"
-            alt="Detetive vitoriana com lupa sob a névoa de Londres"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/55 to-ink" />
-          <div className="fog-layer absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-        </div>
+        <HeroBackground />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-28 text-center">
-          <p className="highlight-marker font-fell text-sm md:text-base tracking-[0.3em] uppercase inline-block mb-8">
-            Curso Livre
-          </p>
+          <Reveal y={14} className="mb-6">
+            <p className="font-fell text-xs md:text-sm tracking-[0.45em] uppercase text-brass">
+              Anatomia de um Thriller
+            </p>
+            <div className="flex items-center justify-center gap-3 mt-4">
+              <span className="h-px w-12 bg-brass/50" />
+              <span className="w-1.5 h-1.5 bg-brass/70 rotate-45" />
+              <span className="h-px w-12 bg-brass/50" />
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15} y={14}>
+            <p className="highlight-marker font-fell text-sm md:text-base tracking-[0.3em] uppercase inline-block mb-8">
+              Curso Livre
+            </p>
+          </Reveal>
 
           <h1 className="font-display font-black leading-[0.95] tracking-tight text-5xl md:text-8xl mb-6">
-            <span className="block text-parchment drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-              VOZES
-            </span>
-            <span className="block text-parchment drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-              VITORIANAS
-            </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brass via-gaslight-bright to-gaslight italic">
-              do Mistério
-            </span>
+            <SplitText
+              text="VOZES"
+              delay={0.35}
+              className="block text-parchment drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+            />
+            <SplitText
+              text="VITORIANAS"
+              delay={0.65}
+              stagger={0.05}
+              className="block text-parchment drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+            />
+            <Reveal delay={1.15} y={20} className="block">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-brass via-gaslight-bright to-gaslight italic">
+                do Mistério
+              </span>
+            </Reveal>
           </h1>
 
-          <p className="text-xl md:text-2xl text-parchment/90 max-w-3xl mx-auto leading-relaxed mb-4 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
-            Os maiores mistérios da literatura policial começaram na Era
-            Vitoriana.{" "}
-            <em className="text-gaslight not-italic font-semibold">
-              Está na hora de descobri-los.
-            </em>
-          </p>
+          <Reveal delay={1.35}>
+            <p className="text-xl md:text-2xl text-parchment/90 max-w-3xl mx-auto leading-relaxed mb-4 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
+              Os maiores mistérios da literatura policial começaram na Era
+              Vitoriana.{" "}
+              <em className="text-gaslight not-italic font-semibold">
+                Está na hora de descobri-los.
+              </em>
+            </p>
+          </Reveal>
 
-          <p className="font-fell text-parchment-dim tracking-widest uppercase text-sm mb-10">
-            @sabrinnatalks
-          </p>
+          <Reveal delay={1.45}>
+            <p className="font-fell text-parchment-dim tracking-widest uppercase text-sm mb-10">
+              @sabrinnatalks
+            </p>
+          </Reveal>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 text-parchment/90">
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-gaslight" />
-              <span>+ de 2 horas de curso</span>
+          <Reveal delay={1.55}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 text-parchment/90">
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-gaslight" />
+                <span>+ de 4 horas de curso</span>
+              </div>
+              <div className="hidden sm:block w-1 h-1 bg-brass rounded-full" />
+              <div className="flex items-center gap-2">
+                <PlayCircle className="w-5 h-5 text-gaslight" />
+                <span>Acesso imediato</span>
+              </div>
+              <div className="hidden sm:block w-1 h-1 bg-brass rounded-full" />
+              <div className="flex items-center gap-2">
+                <ScrollText className="w-5 h-5 text-gaslight" />
+                <span>+ 3 discussões gravadas</span>
+              </div>
             </div>
-            <div className="hidden sm:block w-1 h-1 bg-brass rounded-full" />
-            <div className="flex items-center gap-2">
-              <PlayCircle className="w-5 h-5 text-gaslight" />
-              <span>Acesso imediato</span>
-            </div>
-            <div className="hidden sm:block w-1 h-1 bg-brass rounded-full" />
-            <div className="flex items-center gap-2">
-              <ScrollText className="w-5 h-5 text-gaslight" />
-              <span>Discussões gravadas</span>
-            </div>
-          </div>
+          </Reveal>
 
-          <a
-            href={CHECKOUT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gaslight hover:bg-gaslight-bright text-ink font-display font-bold text-lg md:text-xl px-12 py-5 rounded-sm tracking-wide transition-all duration-300 transform hover:scale-105 gaslight-glow flicker"
-          >
-            GARANTA SUA VAGA
-          </a>
+          <Reveal delay={1.7}>
+            <a
+              href={CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gaslight hover:bg-gaslight-bright text-ink font-display font-bold text-lg md:text-xl px-12 py-5 rounded-sm tracking-wide transition-all duration-300 transform hover:scale-105 gaslight-glow flicker"
+            >
+              GARANTA SUA VAGA
+            </a>
+          </Reveal>
 
-          <p className="font-fell text-parchment-dim mt-6 text-sm tracking-wide">
-            Venha investigar as origens das narrativas de mistério conosco!
-          </p>
+          <Reveal delay={1.85} y={12}>
+            <p className="font-fell text-parchment-dim mt-6 text-sm tracking-wide">
+              Venha investigar as origens das narrativas de mistério conosco!
+            </p>
+          </Reveal>
         </div>
 
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-brass animate-bounce">
@@ -93,15 +122,7 @@ export default function Home() {
 
       {/* ============ O QUE É O CURSO ============ */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-ink via-coal to-ink overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.22]">
-          <img
-            src="/casebook.png"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-transparent to-ink/80" />
-        </div>
+        <ParallaxBg src="/casebook.png" className="opacity-[0.22]" />
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <p className="stamp text-blood mb-6">Dossiê nº 01</p>
@@ -110,7 +131,8 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="relative bg-soot/60 backdrop-blur border border-brass/25 rounded-sm p-8 md:p-14 overflow-hidden engraving-frame">
+          <Reveal>
+            <div className="relative bg-soot/60 backdrop-blur border border-brass/25 rounded-sm p-8 md:p-14 overflow-hidden engraving-frame">
             <div className="absolute -top-10 -right-10 w-56 h-56 bg-gaslight/10 rounded-full blur-3xl" />
 
             <p className="text-2xl md:text-3xl leading-relaxed mb-8 relative z-10">
@@ -128,24 +150,17 @@ export default function Home() {
             </p>
 
             <p className="font-fell text-lg text-gaslight tracking-wide relative z-10 border-l-2 border-gaslight pl-5">
-              São mais de duas horas de curso sobre o melhor da literatura de
+              São mais de quatro horas de curso sobre o melhor da literatura de
               suspense.
             </p>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ============ MÓDULOS ============ */}
       <section className="relative py-24 px-6 bg-ink overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.2]">
-          <img
-            src="/map-ravencroft.png"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-transparent to-ink/80" />
-        </div>
+        <ParallaxBg src="/map-ravencroft.png" className="opacity-[0.2]" />
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <p className="stamp text-blood mb-6">Dossiê nº 02</p>
@@ -187,9 +202,9 @@ export default function Home() {
                 title: "Vozes Vitorianas do Mistério",
                 desc: "A produção vitoriana de mistério e suas pioneiras",
               },
-            ].map((mod) => (
+            ].map((mod, i) => (
+              <Reveal key={mod.n} delay={i * 0.08} y={24}>
               <div
-                key={mod.n}
                 className="bg-coal/50 backdrop-blur border border-brass/20 rounded-sm p-6 md:p-7 hover:border-gaslight/40 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-5">
@@ -205,6 +220,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -237,9 +253,9 @@ export default function Home() {
                 title: "Dragão Vermelho",
                 author: "Thomas Harris",
               },
-            ].map((book) => (
+            ].map((book, i) => (
+              <Reveal key={book.title} delay={i * 0.12} y={32}>
               <div
-                key={book.title}
                 className="bg-soot/60 backdrop-blur border border-brass/20 rounded-sm overflow-hidden hover:border-gaslight/40 transition-all duration-300 group engraving-frame"
               >
                 <div className="relative aspect-[2/3] overflow-hidden bg-ink flex items-center justify-center">
@@ -259,6 +275,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+              </Reveal>
             ))}
           </div>
 
@@ -299,13 +316,14 @@ export default function Home() {
               "Autores e autoras fundamentais que muitas vezes ficam fora das listas tradicionais",
               "Uma leitura crítica da produção vitoriana de mistério, articulando contexto histórico, teoria literária e análise textual",
             ].map((item, i) => (
+              <Reveal key={i} delay={i * 0.12} y={24}>
               <div
-                key={i}
                 className="flex items-start gap-4 bg-coal/40 backdrop-blur border border-brass/15 rounded-sm p-6"
               >
                 <Pin className="w-5 h-5 text-blood flex-shrink-0 mt-1" />
                 <p className="text-xl text-parchment leading-relaxed">{item}</p>
               </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -322,6 +340,7 @@ export default function Home() {
           </div>
 
           {/* Setembro */}
+          <Reveal x={-40} y={0}>
           <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
             <div className="relative aspect-[2/3] w-full max-w-md mx-auto overflow-hidden rounded-sm engraving-frame">
               <img
@@ -354,8 +373,10 @@ export default function Home() {
               </p>
             </div>
           </div>
+          </Reveal>
 
           {/* Out/Nov */}
+          <Reveal x={40} y={0}>
           <div className="grid md:grid-cols-2 gap-8 items-center mb-16 md:flex-row-reverse">
             <div className="md:order-2 relative aspect-[2/3] w-full max-w-md mx-auto overflow-hidden rounded-sm engraving-frame">
               <img
@@ -386,8 +407,10 @@ export default function Home() {
               </p>
             </div>
           </div>
+          </Reveal>
 
           {/* Dezembro */}
+          <Reveal x={-40} y={0}>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative aspect-[2/3] w-full max-w-md mx-auto overflow-hidden rounded-sm engraving-frame">
               <img
@@ -419,6 +442,7 @@ export default function Home() {
               </p>
             </div>
           </div>
+          </Reveal>
         </div>
       </section>
 
@@ -432,6 +456,7 @@ export default function Home() {
             </h2>
           </div>
 
+          <Reveal y={36}>
           <div className="grid md:grid-cols-2 gap-10 items-center bg-coal/50 backdrop-blur border border-brass/20 rounded-sm overflow-hidden engraving-frame">
             <div className="relative h-96 md:h-full min-h-[24rem] overflow-hidden">
               <img
@@ -482,11 +507,13 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ============ CTA FINAL ============ */}
       <section className="relative py-24 px-6 bg-gradient-to-b from-ink via-coal to-ink">
+        <Reveal y={32}>
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-fell text-parchment-dim tracking-[0.3em] uppercase mb-6">
             Dossiê Final
@@ -536,6 +563,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* ============ FOOTER ============ */}
